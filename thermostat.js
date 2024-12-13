@@ -25,6 +25,10 @@ class Thermostat {
 		this.minTemperature = 10;
 	}
 
+	getTemperature() {
+		return this.initialTemperature;
+	}
+
 	up() {
 		this.initialTemperature += 1;
 	}

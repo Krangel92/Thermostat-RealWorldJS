@@ -39,6 +39,10 @@ class Thermostat {
 			this.initialTemperature -= 1;
 		}
 	}
+
+	turnOffPsm() {
+		this.powerSavingMode = false;
+	}
 }
 
 module.exports = Thermostat;

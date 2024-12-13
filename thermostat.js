@@ -22,6 +22,7 @@
 class Thermostat {
 	constructor() {
 		this.initialTemperature = 20;
+		this.minTemperature = 10;
 	}
 
 	up() {

@@ -34,7 +34,9 @@ class Thermostat {
 	}
 
 	down() {
-		this.initialTemperature -= 1;
+		if (this.initialTemperature > this.minTemperature) {
+			this.initialTemperature -= 1;
+		}
 	}
 }
 

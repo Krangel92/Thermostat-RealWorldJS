@@ -49,4 +49,10 @@ describe("thermostat", () => {
 		const thermostat = new Thermostat();
 		expect(thermostat.powerSavingMode).toBe(true);
 	});
+	it("can turn off power saving mode", () => {
+		const thermostat = new Thermostat();
+		expect(thermostat.powerSavingMode).toBe(true);
+		thermostat.turnOffPsm();
+		expect(thermostat.powerSavingMode).toBe(false);
+	});
 });

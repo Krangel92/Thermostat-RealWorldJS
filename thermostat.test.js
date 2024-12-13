@@ -45,4 +45,8 @@ describe("thermostat", () => {
 
 		expect(thermostat.initialTemperature).toBe(10);
 	});
+	it("has a power saving mode that is by default on", () => {
+		const thermostat = new Thermostat();
+		expect(thermostat.powerSavingMode).toBe(true);
+	});
 });

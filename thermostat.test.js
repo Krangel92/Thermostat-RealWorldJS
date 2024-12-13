@@ -27,4 +27,22 @@ describe("thermostat", () => {
 		const thermostat = new Thermostat();
 		expect(thermostat.minTemperature).toBe(10);
 	});
+	it("does not decreases the temperature below 10", () => {
+		const thermostat = new Thermostat();
+		thermostat.down();
+		thermostat.down();
+		thermostat.down();
+		thermostat.down();
+		thermostat.down();
+		thermostat.down();
+		thermostat.down();
+		thermostat.down();
+		thermostat.down();
+		thermostat.down();
+		thermostat.down();
+		thermostat.down();
+		thermostat.down();
+
+		expect(thermostat.initialTemperature).toBe(10);
+	});
 });

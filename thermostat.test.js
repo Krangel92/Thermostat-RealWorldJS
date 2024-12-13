@@ -19,4 +19,8 @@ describe("thermostat", () => {
 		thermostat.down();
 		expect(thermostat.initialTemperature).toBe(19);
 	});
+	it("has a minimum possible temperature of 10 degrees", () => {
+		const thermostat = new Thermostat();
+		expect(thermostat.minTemperature).toBe(10);
+	});
 });

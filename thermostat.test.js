@@ -55,4 +55,15 @@ describe("thermostat", () => {
 		thermostat.turnOffPsm();
 		expect(thermostat.powerSavingMode).toBe(false);
 	});
+	it("has a maximum temperature of 25 degrees, if the power saving mode is on", () => {
+		const thermostat = new Thermostat();
+		expect(thermostat.powerSavingMode).toBe(true);
+		thermostat.up();
+		thermostat.up();
+		thermostat.up();
+		thermostat.up();
+		thermostat.up();
+		thermostat.up();
+		expect(thermostat.initialTemperature).toBe(25);
+	});
 });

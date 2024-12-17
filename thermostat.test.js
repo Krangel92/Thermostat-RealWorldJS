@@ -66,4 +66,24 @@ describe("thermostat", () => {
 		thermostat.up();
 		expect(thermostat.initialTemperature).toBe(25);
 	});
+	it("has a maximum temperature is 32 degrees, if power saving mode is off", () => {
+		const thermostat = new Thermostat();
+		expect(thermostat.powerSavingMode).toBe(true);
+		thermostat.turnOffPsm();
+		expect(thermostat.powerSavingMode).toBe(false);
+		thermostat.up();
+		thermostat.up();
+		thermostat.up();
+		thermostat.up();
+		thermostat.up();
+		thermostat.up();
+		thermostat.up();
+		thermostat.up();
+		thermostat.up();
+		thermostat.up();
+		thermostat.up();
+		thermostat.up();
+		thermostat.up();
+		expect(thermostat.initialTemperature).toBe(32);
+	});
 });

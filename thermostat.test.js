@@ -1,7 +1,5 @@
 const Thermostat = require("./thermostat.js");
 
-// const thermostat = new Thermostat();
-
 describe("thermostat", () => {
 	it("starts/ sets the initial temperature to 20 degrees", () => {
 		const thermostat = new Thermostat();
@@ -85,5 +83,14 @@ describe("thermostat", () => {
 		thermostat.up();
 		thermostat.up();
 		expect(thermostat.initialTemperature).toBe(32);
+	});
+	it("reset the temperature to 20", () => {
+		const thermostat = new Thermostat();
+		thermostat.up();
+		thermostat.up();
+		thermostat.down();
+		thermostat.up();
+		thermostat.reset();
+		expect(thermostat.getTemperature()).toBe(20);
 	});
 });

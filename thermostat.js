@@ -24,6 +24,7 @@ class Thermostat {
 		this.initialTemperature = 20;
 		this.minTemperature = 10;
 		this.powerSavingMode = true;
+		this.maxPSMtemperature = 25;
 	}
 
 	getTemperature() {
@@ -31,7 +32,12 @@ class Thermostat {
 	}
 
 	up() {
-		this.initialTemperature += 1;
+		if (
+			this.powerSavingMode === true &&
+			this.initialTemperature < this.maxPSMtemperature
+		) {
+			this.initialTemperature += 1;
+		}
 	}
 
 	down() {
